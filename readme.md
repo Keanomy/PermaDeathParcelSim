@@ -11,6 +11,7 @@ PermaDeathParcel is a project that will delete you save file. This repository co
 ```bash
 git clone https://github.com/Keanomy/PermaDeathParcel.git
 cd PermaDeathParcel
+pip install -r requirements.txt
 ```
 
 ## Usage
