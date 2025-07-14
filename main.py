@@ -20,6 +20,7 @@ offset = [0x1B8, 0x268, 0x378]
 def main() -> None:
     Console().clear()
     print("Starting ...")
+    print("BACK UP YOUR SAVES, THIS WILL DELETE YOUR SAVE(Save1.sav) INSTANTLY IF A SAVE IS LOADED WITH FAILED PARCELS IN IT.")
     check_fails()
     if input("Hit 'Enter' to Exit. Y to restart.").lower() == "y":
         main()
@@ -40,7 +41,8 @@ def check_fails() -> None:
                 sleep(1)
                 savepath = os.path.join((os.getenv("LOCALAPPDATA")) or "", "\\parcel\\Saved\\SaveGames\\Save1.sav")
                 os.kill(game_mem.process_id, signal.SIGTERM)
-                os.remove(savepath)
+                ## Delete the first save file ALWAYS
+                os.remove(savepath)  # This will NOT look for what save you are playing.
                 print("[bold red]Save file deleted.[/bold red]")
                 break
             else:
