@@ -17,4 +17,4 @@ pip install -r requirements.txt
 ```
 
 ## Usage
-Just run main.py
+Run main.py
